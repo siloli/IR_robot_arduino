@@ -24,9 +24,6 @@ void setup(){
 
 
 void loop(){
-
-}
-void recherche_IR(){
     if(irrecv.decode(&results)){
         switch(results.value){
             case power:
@@ -47,6 +44,7 @@ void recherche_IR(){
         }
         if(results.value!=0xFFFFFF)stop();
         irrecv.resume();
+    }
 }
 void stop(){
     droite.run(RELEASE);
